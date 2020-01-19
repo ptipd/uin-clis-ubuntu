@@ -1,5 +1,6 @@
 FROM ptipd/uin-base-ubuntu:1.1_18.04
 
+ARG CFG_ID
 ARG APP_BUILD
 
 RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >> /etc/BUILD && \
