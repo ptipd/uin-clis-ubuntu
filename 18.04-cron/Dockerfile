@@ -17,7 +17,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     # prepare entrypoint:
     echo '#!/bin/sh' > /app && \
     echo 'cron -f' >> /app && \
-    echo chmod +x /app >> /app && \
+    chmod +x /app && \
     #
     # cleanup:
     apt-get clean && \
