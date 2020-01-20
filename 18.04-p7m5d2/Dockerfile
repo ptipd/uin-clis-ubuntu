@@ -6,11 +6,10 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends software-properties-common && \
-    add-apt-repository ppa:ondrej/php && \
+    apt-get -y install  && \
     DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
         apt-get -y install --no-install-recommends \
-        php7.3 php7.3-intl php7.3-gd php7.3-curl php7.3-ldap php7.3-mysql php7.3-sqlite3 \
+        php7.2 php7.2-intl php7.2-gd php7.2-curl php7.2-ldap php7.2-mysql php7.2-sqlite3 \
         mysql-client ldap-client && \
     #
     # cleanup:
