@@ -7,7 +7,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends cron \
+    apt-get -y install --no-install-recommends file cron \
         logrotate iputils-ping && \
     #
     # prepare config user:
