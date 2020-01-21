@@ -8,10 +8,10 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     # install base cli tools:
     apt-get -y update && \
     apt-get -y install --no-install-recommends file openssh-server \
-        telnet iputils-ping traceroute && \
-        socat sdcv vim bash-completion bc lzop vifm tmux screen tree socket mc links curl source-highlight pv lynx vfu ytree wput lshw nmap bmon tshark sqlite3 \
-shelldap mysql-client ldap-client 
-dos2unix html2text sc csvtool jq ftp ncftp tftp sendemail multitail rar unrar mutt
+        telnet iputils-ping traceroute socket nmap bmon tshark ftp ncftp tftp socat && \
+        bash-completion source-highlight multitail rar unrar \
+        dos2unix html2text sc csvtool jq bc lzop pv tree ytree \
+        htop tmux screen vim mc vifm vfu sqlite3 && \
     #
     # prepare config user:
     groupadd -g ${CFG_ID} cfg && \
