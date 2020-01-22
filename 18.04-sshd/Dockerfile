@@ -20,7 +20,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # prepare entrypoint:
     echo '#!/bin/sh' > /app && \
-    echo '/usr/sbin/sshd' >> /app && \
+    echo '/usr/sbin/sshd -D' >> /app && \
     chmod 750 /app && \
     #
     # cleanup:
