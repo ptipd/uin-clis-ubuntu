@@ -7,9 +7,10 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends file openssh-server \
-        telnet iputils-ping traceroute socket nmap bmon tshark ftp ncftp tftp socat && \
-        bash-completion source-highlight multitail rar unrar \
+     DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
+        apt-get -y install --no-install-recommends file openssh-server \
+        telnet iputils-ping traceroute socket nmap bmon ftp ncftp tftp socat \
+        bash-completion source-highlight multitail rar unrar zip unzip \
         dos2unix html2text sc csvtool jq bc lzop pv tree ytree \
         htop tmux screen vim mc vifm vfu sqlite3 && \
     #
@@ -19,8 +20,8 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # prepare entrypoint:
     echo '#!/bin/sh' > /app && \
-    echo 'sshd' >> /app && \
-    chmod +x /app && \
+    echo '/usr/sbin/sshd' >> /app && \
+    chmod 750 /app && \
     #
     # cleanup:
     apt-get clean && \
