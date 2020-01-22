@@ -11,6 +11,10 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
         apt-get -y install --no-install-recommends \
         php7.2 php7.2-intl php7.2-gd php7.2-curl php7.2-ldap php7.2-mysql php7.2-sqlite3 \
         links lynx sendemail mutt shelldap mysql-client ldap-client && \
+    #echo 'root:THEPASSWORDYOUCREATED' | chpasswd
+    #sed -i 's/PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+    #sed 's@session\s*required\s*pam_loginuid.so@session optional pam_loginuid.so@g' -i /etc/pam.d/sshd
+    #echo "export VISIBLE=now" >> /etc/profile
     #
     # cleanup:
     apt-get clean && \
