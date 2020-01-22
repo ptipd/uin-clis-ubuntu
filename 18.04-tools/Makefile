@@ -31,7 +31,7 @@ build-nc: ## Build the container without caching
 	docker build --no-cache --build-arg "APP_BUILD=$(IMG_NAME)" -t $(IMG_NAME) .
 
 run: ## Run container on port configured in `config.env`
-	docker run -d --env-file ./.config.env --name $(RUN_NAME) $(IMG_NAME)
+	docker run -d --env-file ./.config.env -p $(PORT):$(PORS) --name $(RUN_NAME) $(IMG_NAME)
 
 up: build run ## Run container on port configured in `.config.env` (Alias to run)
 
