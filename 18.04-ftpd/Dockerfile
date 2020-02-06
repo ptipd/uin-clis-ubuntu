@@ -7,7 +7,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends pure-ftpd && \
+    apt-get -y install --no-install-recommends pure-ftpd pure-ftpd-ldap pure-ftpd-mysql && \
     #
     # prepare config user:
     groupadd -g ${CFG_ID} cfg && \
