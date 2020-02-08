@@ -15,7 +15,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # prepare entrypoint:
     echo '#!/bin/sh' > /app && \
-    echo 'pure-ftpd-ldap -i -4 -H -K -X -A -E -u 699 -U 027 -p 10200:10500' >> /app && \
+    echo 'pure-ftpd-ldap -4 -i -x -A -H -K' >> /app && \
     chmod +x /app && \
     #
     # cleanup:
