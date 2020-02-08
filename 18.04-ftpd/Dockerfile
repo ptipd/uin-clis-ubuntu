@@ -7,7 +7,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends pure-ftpd pure-ftpd-ldap pure-ftpd-mysql && \
+    apt-get -y install --no-install-recommends pure-ftpd-ldap && \
     #
     # prepare config user:
     groupadd -g ${CFG_ID} cfg && \
@@ -15,7 +15,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # prepare entrypoint:
     echo '#!/bin/sh' > /app && \
-    echo 'pure-ftpd -4 -A -E -u 699 -U 027 -p 10200:10500' >> /app && \
+    echo 'pure-ftpd-ldap -i -4 -H -K -X -A -E -u 699 -U 027 -p 10200:10500' >> /app && \
     chmod +x /app && \
     #
     # cleanup:
