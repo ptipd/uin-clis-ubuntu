@@ -1,4 +1,4 @@
-FROM ptipd/uin-base-ubuntu:1.1_18.04
+FROM ptipd/uin-base-ubuntu:1.3_18.04
 
 ARG CFG_ID
 ARG APP_BUILD
@@ -7,8 +7,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     #
     # install base cli tools:
     apt-get -y update && \
-    apt-get -y install --no-install-recommends file cron \
-        logrotate iputils-ping && \
+    apt-get -y install --no-install-recommends cron && \
     #
     # prepare config user:
     groupadd -g ${CFG_ID} cfg && \

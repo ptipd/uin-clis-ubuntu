@@ -1,4 +1,4 @@
-FROM ptipd/uin-clis-ubuntu:1.1_18.04-cron
+FROM ptipd/uin-clis-ubuntu:1.3_18.04-cron
 
 ARG APP_BUILD
 
@@ -10,7 +10,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
         apt-get -y install --no-install-recommends \
         php7.2 php7.2-intl php7.2-gd php7.2-curl php7.2-ldap php7.2-mysql php7.2-sqlite3 \
-        mysql-client ldap-client && \
+        mysql-client && \
     #
     # cleanup:
     apt-get clean && \

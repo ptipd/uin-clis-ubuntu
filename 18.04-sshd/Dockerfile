@@ -1,4 +1,4 @@
-FROM ptipd/uin-base-ubuntu:1.1_18.04
+FROM ptipd/uin-base-ubuntu:1.3_18.04
 
 ARG CFG_ID
 ARG APP_BUILD
@@ -8,11 +8,11 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     # install base cli tools:
     apt-get -y update && \
      DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
-        apt-get -y install --no-install-recommends sudo file openssh-server \
-        telnet iputils-ping traceroute socket nmap bmon ftp ncftp tftp socat \
-        bash-completion source-highlight multitail rar unrar zip unzip \
-        dos2unix html2text sc csvtool jq bc lzop pv tree ytree \
-        htop tmux screen vim mc vifm vfu sqlite3 && \
+        apt-get -y install --no-install-recommends sudo openssh-server \
+        nmap bmon ftp ncftp tftp socat \
+        bash-completion source-highlight rar unrar zip unzip \
+        dos2unix html2text sc csvtool jq bc lzop pv ytree \
+        htop tmux screen vim mc vifm vfu && \
     #
     # prepare config user:
     groupadd -g ${CFG_ID} cfg && \
@@ -29,4 +29,5 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     rm -f /var/log/*log var/log/apt/*log
 
 EXPOSE 22
+
 ENTRYPOINT /app
