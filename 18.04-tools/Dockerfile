@@ -1,4 +1,4 @@
-FROM ptipd/uin-clis-ubuntu:1.3_18.04-sshd
+FROM ptipd/uin-clis-ubuntu:1.4_18.04-sshd1.7
 
 ARG APP_BUILD
 
