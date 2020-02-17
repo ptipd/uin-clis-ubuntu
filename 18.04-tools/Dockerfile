@@ -1,4 +1,5 @@
-FROM ptipd/uin-clis-ubuntu:1.5_18.04-sshd1.7
+ARG OWN_BASE
+FROM ${OWN_BASE}
 
 ARG APP_BUILD
 
