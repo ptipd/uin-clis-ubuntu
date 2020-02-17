@@ -1,4 +1,4 @@
-FROM ptipd/uin-clis-ubuntu:1.4_18.04-cron3.0
+FROM ptipd/uin-clis-ubuntu:1.5_18.04-cron3.0
 
 ARG APP_BUILD
 

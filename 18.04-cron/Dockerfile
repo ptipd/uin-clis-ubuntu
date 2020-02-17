@@ -1,4 +1,4 @@
-FROM ptipd/uin-base-ubuntu:1.4_18.04
+FROM ptipd/uin-base-ubuntu:1.5_18.04
 
 ARG CFG_ID
 ARG APP_BUILD
