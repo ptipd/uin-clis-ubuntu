@@ -10,9 +10,8 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     apt-get -y update && \
      DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
         apt-get -y install --no-install-recommends sudo openssh-server \
-        nmap bmon ftp ncftp tftp socat \
+        nmap bmon ncftp tftp socat sc lzop pv ytree \
         bash-completion source-highlight rar unrar zip unzip \
-        dos2unix html2text sc csvtool jq bc lzop pv ytree \
         htop tmux screen vim mc vifm vfu && \
     #
     # prepare config user:

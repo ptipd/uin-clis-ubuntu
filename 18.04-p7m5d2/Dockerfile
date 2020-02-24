@@ -10,8 +10,7 @@ RUN printf "Build of ${APP_BUILD}, date: %s\n" `date -u +"%Y-%m-%dT%H:%M:%SZ"` >
     apt-get -y install  && \
     DEBIAN_FRONTEND=noninteractive DEBCONF_NONINTERACTIVE_SEEN=true \
         apt-get -y install --no-install-recommends \
-        php7.2 php7.2-intl php7.2-gd php7.2-curl php7.2-ldap php7.2-mysql php7.2-sqlite3 \
-        mysql-client && \
+        php7.2 php7.2-intl php7.2-gd php7.2-curl php7.2-ldap php7.2-mysql php7.2-sqlite3 && \
     #
     # cleanup:
     apt-get clean && \
